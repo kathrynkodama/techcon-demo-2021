@@ -18,6 +18,6 @@ COPY --chown=1001:0 /src/main/liberty/config /config
 
 RUN features.sh
 
-COPY --from-builder /build/target/*.war /config/apps
+COPY --from=builder /build/target/*.war /config/apps
 
 RUN configure.sh
